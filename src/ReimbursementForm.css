@@ -1,0 +1,84 @@
+/* ReimbursementForm.css */
+
+body {
+    background: linear-gradient(120deg, #5445e2, #38bba3);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    backdrop-filter: blur(8px);
+    max-height: 100%; /* Set a maximum height for the container */
+    overflow-y: auto; /* Add a vertical scrollbar if needed */
+}
+
+form {
+    background: rgba(255, 255, 255, 0.8); /* Adjust transparency as needed */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex; /* Make the form a flex container */
+    flex-direction: column; /* Arrange children in a column */
+    align-items: flex-start; /* Align children to the left */
+}
+
+h2 {
+    color: #ffcc00; /* Yellow title color */
+}
+
+label {
+    margin-top: 10px;
+    color: #fff;
+    align-self: flex-start; /* Align labels to the left */
+}
+
+input,
+select,
+textarea {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+/* Adjust styling for checkbox and button */
+.checkbox-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align checkbox to the left */
+}
+
+button {
+    margin: auto; /* Center the button horizontally */
+    margin-top: 10px; /* Adjust top margin as needed */
+    padding: 8px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 50%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+span {
+    color: #ffcc00; /* Yellow error text color */
+}
+
+p {
+    color: #ffcc00; /* Yellow access denied text color */
+}

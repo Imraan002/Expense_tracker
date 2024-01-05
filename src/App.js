@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Login from './Login';
+import ReimbursementForm from './ReimbursementForm';
+import RoleBasedAccessControl from './RoleBasedAccessControl';
 
-function App() {
+const App = () => {
+  const [userRole, setUserRole] = useState('');
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const handleLogin = (role) => {
+    console.log("Logged in as:", role); // Add this line for debugging
+    setUserRole(role);
+    setLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    setUserRole('');
+    setLoggedIn(false);
+  };
+
+  console.log("User Role:", userRole); // Add this line for debugging
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {!loggedIn ? (
+        <Login onLogin={handleLogin} />
+      ) : (
+        <RoleBasedAccessControl userRole={userRole}>
+          <ReimbursementForm userRole={userRole} onLogout={handleLogout} />
+        </RoleBasedAccessControl>
+      )}
     </div>
   );
-}
+};
 
 export default App;
